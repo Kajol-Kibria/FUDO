@@ -54,7 +54,7 @@ export default function Navbar() {
         <div onClick={()=>{setMenu(!menu)}} className={`${menu?'hidden':'block'} fixed right-10 left-10 transition-all duration-500 mx-auto bg-[#f54748] py-5 px-8 text-center rounded-lg text-white z-50`}>
         <div className='space-y-4'>
            {navArray.map(({name, link})=>{
-            return (<div>
+            return (<div key={name}>
                 <Link className={`${path === link && 'border-b-2 border-white'}`} href={link}>{name}</Link>
             </div>)
            })}     

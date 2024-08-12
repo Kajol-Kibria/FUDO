@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { FaArrowRight } from "react-icons/fa6";
 
 
-export default function cart() {
+export default function Cart() {
     const data = useSelector((state) => state.cart);
     
     const dispatch = useDispatch()

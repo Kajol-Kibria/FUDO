@@ -36,7 +36,7 @@ export default function Menu() {
             <div className='grid sm:grid-cols-3 gap-9 '>
                 {data.map((a)=>{
                     return (
-                        <Link href={`./details/${a.id}`}>
+                        <Link key={a.id} href={`./details/${a.id}`}>
                         <div className='mx-auto' key={a.id}>
                             <div className='overflow-hidden rounded-3xl inline-block'>
                                 <Image src={a.image} alt='' height={370} width={370} className='object-contain rounded-3xl hover:scale-110 transition-transform duration-500'/>
