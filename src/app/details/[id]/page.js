@@ -2,7 +2,7 @@
 import React from 'react'
 import { getDetails } from '../../request'
 import Image from 'next/image';
-import ReactImageMagnify from 'react-image-magnify';
+
 import Link from 'next/link';
 import { addToCart } from '@/app/features/addtocart/cartSlice';
 import { useDispatch } from 'react-redux';
@@ -14,36 +14,18 @@ export default async function Details({params}) {
 const id = params.id
 const details = await getDetails(id);
 
-const img = details.image;
   return (
     <div className='w-[85%] sm:w-[75%] mx-auto sm:my-20'>
       <div className='sm:flex justify-between items-center'>
          <div className='sm:w-1/2'>
        <div className='hidden sm:block'>
-{/* react-image-magnify library used */}
-         <ReactImageMagnify    
-        {...{
-          smallImage: {
-            alt: "Wristwatch by Ted Baker London",
-            width: 500,
-            height: 500,
-            src: img,
-          },
-          largeImage: {
-            src: img,
-            width: 1000,
-            height: 1000,
-          },
-          isHintEnabled: true,
-          enlargedImagePosition : 'over'
-        }}
-      />
+
       </div>
       <div>
-      <Image className='sm:hidden mx-auto' src={details.image} alt='' width={300} height={300}/>
+      <Image className=' mx-auto' src={details.image} alt='' width={500} height={500}/>
 </div>
       </div>
-      <div className='sm:w-1/2'>npm run dev
+      <div className='sm:w-1/2'>
       
         <div className='space-y-6'>
         <p className='text-3xl font-bold'>{details.name}</p>

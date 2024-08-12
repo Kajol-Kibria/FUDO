@@ -28,13 +28,13 @@ export default function cart() {
   return (
     <div className=' w-[85%] sm:w-[75%] mx-auto min-h-[60vh]'>
       <p className='text-center text-3xl font-bold my-20'>Your cart</p>
-      {data.cartItem.length === 0 ? (
+      {(data.cartItem.length === 0) ? (
         <div className='flex flex-col items-center'>
         <div className='text-center text-2xl font-bold text-[#f54748]'>Cart is empty</div>
         <Image src='/empty-cart.png' alt='' height={300} width={300}/>
         <Link href='/'><p className='bg-[#f54748] text-xl flex items-center gap-2 px-4 py-2 rounded font-bold text-white'>Order now!<FaArrowRight/></p></Link>
         </div>
-      ):(
+      ) : (
         <div className='flex flex-col gap-6 sm:my-10'>
         {data.cartItem.map((item)=>{
           return(
